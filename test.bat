@@ -1,0 +1,1 @@
+streamlit run loading_page.py
