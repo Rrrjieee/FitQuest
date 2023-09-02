@@ -1,0 +1,5 @@
+config.py
+assets\*
+*.bat
+*.png
+_pycache_\*
