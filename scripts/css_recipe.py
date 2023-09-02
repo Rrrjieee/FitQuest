@@ -16,7 +16,7 @@ class CSSRecipe:
     '''
     A generic method for defining the attributes of a widget to the CSSRecipe object.
     '''
-    def define_attributes(self, widget_type: str, widget_id: str, attr_dict: dict):
+    def define_attributes(self, widget_type: str, widget_id: str, attr_dict: dict = {}):
         if (self.widgets[widget_type] is None):
             return
         if (self.widgets[widget_type][widget_id] is None):
@@ -27,12 +27,14 @@ class CSSRecipe:
             value_list                  = list(value)
             widget_dict[value_list[0]]  = value_list[1]
 
+        del attr_dict
+
     
     def register_button(self, button_id: str):
         self.register("button", button_id)
         pass
 
-    def define_button_attributes(self, button_id: str, attr_dict: dict):
+    def define_button_attributes(self, button_id: str, attr_dict: dict = {}):
         self.define_attributes("button", button_id, attr_dict)
 
     def __str__(self):
