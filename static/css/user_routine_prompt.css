@@ -1,0 +1,15 @@
+body {
+    background-image: url("/static/user_routine_prompt.png");
+    background-size: 100%;
+}
+input[type="submit"] {
+    border-radius: 5%;
+    position: relative;
+    font-size: 200%;
+    font-family: "Serif", "Times New Roman", "Arial";
+    left: 16%;
+    margin-top: 24%;
+    margin-right: 16%;
+    width: 28%;
+    height: 28%;
+}

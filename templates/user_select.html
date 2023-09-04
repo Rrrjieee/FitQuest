@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<!-- ================= -->
+<head>
+    <title>FitQuest: Choose user profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_select.css') }}">
+</head>
+<!-- ================= -->
+<body>
+<!-- ================= -->
+<div id="div_main">
+    <form method="post" action="/user_list" id="form_container">
+    {% for i in range(0,5) %}
+    <img class="user_icon" src="/static/default_user_icon.png" id="user_{{i}}">
+    {% endfor %}
+    </form>
+</div>
+<!-- ================= -->
+</body>
+</html>

@@ -1,5 +1,6 @@
 config.py
 assets\*
+assets
 *.bat
 *.png
 *.xcf
