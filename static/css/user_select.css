@@ -8,14 +8,18 @@ div#div_main {
     margin-left: 20%;
     height: 20%;
 }
+div.img_container {
+    height: 16%;
+    max-width: 14%;
+    margin-right: 2%;
+}
+
 img.user_icon {
-    height: 15%;
-    width: 15%;
+    height: 100%;
+    width: 88%;
     cursor: pointer;
 }
-button[type="submit"] {
-    border: none;
-    background-image: url("/static/default_user_icon.png");
-    background-size: 100%;
-    padding: 5px;
+
+p.user_flavor_text {
+    text-align: center;
 }
