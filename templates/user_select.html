@@ -1,20 +1,66 @@
 <!DOCTYPE html>
 <html>
-<!-- ================= -->
+
 <head>
     <title>FitQuest: Choose user profile</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/user_select.css') }}">
+    <!-- DO NOT DELETE -->
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
 </head>
-<!-- ================= -->
+
 <body>
-<!-- ================= -->
+<!-- Page recipe -->
 <div id="div_main">
     <form method="post" action="/user_list" id="form_container">
     {% for i in range(0,5) %}
-    <img class="user_icon" src="/static/default_user_icon.png" id="user_{{i}}">
+    <div class="img_container">
+        <img
+            class="user_icon"
+            src="/static/default_user_icon.png"
+            id="user_{{i}}">
+            
+        <p class="user_flavor_text">
+            User {{i}}
+        </p>
+    </div>
     {% endfor %}
     </form>
 </div>
-<!-- ================= -->
+
+<!-- Page response (Probably offload this one to an external javascript file next time.) -->
+<script>
+// Use jQuery to add a click event handler to the image
+$(document).ready(function () {
+function sendClickedUserIcon(i) {
+    var currentURL = window.location.href;
+    $.ajax({
+        type: 'POST',
+        url: currentURL,
+        data: JSON.stringify({"user_index": i}),
+        contentType: 'application/json',
+        success: function (response) {
+            console.log('POST request successful:', response);
+        },
+        error: function (error) {
+            console.error('POST request failed:', error);
+        }
+    });
+};
+
+$( "#user_0" ).click(function() {
+});
+for (let i = 0; i < 5; i++) {    
+    $("#user_" + i).click(function() {
+        // alert("user_" + i);
+        sendClickedUserIcon(i);
+    });
+};
+});
+</script>
+
 </body>
+
 </html>

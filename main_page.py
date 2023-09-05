@@ -17,13 +17,12 @@ def main_page():
 @app.route("/user_list", methods=["GET", "POST"])
 def user_page():
     if request.method == 'GET':
-        print("/user_list >> GET")
         return render_template("user_select.html")
     
     print("/user_list >> POST")
-    return render_template("user_select.html")
+    return redirect("/user_routine")
 
-@app.route("/user_routine")
+@app.route("/user_routine", methods=["GET", "POST"])
 def user_routine():
     return render_template("user_routine_prompt.html")
 
