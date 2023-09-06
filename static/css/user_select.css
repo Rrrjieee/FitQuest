@@ -2,24 +2,28 @@ body {
     background-image: url("/static/user_select.png");
     background-size: 100%;
 }
-div#div_main {
-    position: relative;
-    margin-top: 28%;
-    margin-left: 20%;
-    height: 20%;
-}
-div.img_container {
-    height: 16%;
-    max-width: 14%;
-    margin-right: 2%;
-}
-
-img.user_icon {
-    height: 100%;
-    width: 88%;
-    cursor: pointer;
-}
-
-p.user_flavor_text {
-    text-align: center;
-}
+    div#div_main {
+        position: relative;
+        margin-top: 28%;
+        margin-left: 20%;
+        height: 20%;
+    }
+        div#form_container {
+            display: inline-block;
+            max-height: 16%;
+        }
+            div.img_container {
+                display: inline-block;
+                height: 16%;
+                max-width: 14%;
+            }
+                img.user_icon {
+                    height: 100%;
+                    width: 88%;
+                    margin-left: 2%;
+                    cursor: pointer;
+                }
+                p.user_flavor_text {
+                    text-align: center;
+                    color: #ffffff;
+                }
