@@ -2,6 +2,6 @@ config.py
 assets\*
 assets
 *.bat
-*.png
 *.xcf
 __pycache__
+.gitignore
