@@ -1,0 +1,13 @@
+{% extends "fitquest_template.html" %}
+{% block title %}
+    FitQuest: What's your routine?
+{% endblock %}
+{% block header_data %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_front_page.css') }}">
+{% endblock %}
+{% block content %}
+<div id="button_container">
+    <a href="/user_id={{id}}/option=premade" class="btn btn-light" id="ready-made">READY-MADE ROUTINE</a>
+    <a href="/user_id={{id}}/option=custom" class="btn btn-light" id="custom">CUSTOMIZED ROUTINE</a>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+#flavor_text {
+    font-size: 400%;
+    font-family: "Serif", "Times New Roman", "Arial";
+    color: #ffffff;
+    text-align: center;
+
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 16%;
+}
+#user_container {
+    display: inline-block;
+    margin-left: 12%;
+    margin-top: 1%;
+}
+    .user_widget {
+        display: inline-block;
+        width: 15%;
+        height: 15%;
+        margin-right: 2.5%;
+    }
+        .img-fluid {
+            width: 100%;
+            height: 100%;
+        }
+        .user_flavor_text {
+            font-size: 135%;
+            font-family: "Serif", "Times New Roman", "Arial";
+            width: auto;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 2.5%;
+        }

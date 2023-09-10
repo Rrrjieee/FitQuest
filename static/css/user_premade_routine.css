@@ -1,0 +1,36 @@
+#page_flavor_text {
+    font-size: 275%;
+    font-family: "Serif", "Times New Roman", "Arial";
+    color: #310064;
+    text-align: center;
+
+    background-color: #ffffff;
+    border-radius: 5%;
+    
+    margin-left: 67.5%;
+    margin-top: 2%;
+    width: 30%;
+}
+#interactible_container {
+    display: inline-block;
+    margin-top: 2%;
+    margin-left: 20%;
+    width: 80%;
+}
+    #routine_container {
+        width: 80%;
+    }
+    #routine_start {
+        font-size: 275%;
+        font-family: "Serif", "Times New Roman", "Arial";
+        color: #ffffff;
+        background-color: #400070;
+        text-align: center;
+        
+        transform: rotate(-90deg);
+        height: 30%;
+        width: 30%;
+
+        margin-left: 78%;
+        margin-top: -18%;
+    }

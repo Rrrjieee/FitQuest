@@ -1,0 +1,13 @@
+#button_container {
+    margin-top: 25%;
+    margin-left: 15%;
+}
+[class="btn btn-light"] {
+    font-size: 225%;
+    font-family: "Serif", "Times New Roman", "Arial";
+    color: #310064;
+    width: 40%;
+    height: 20%;
+    position: relative;
+    margin-right: 5%;
+}
