@@ -1,11 +1,19 @@
 import os
 
 from flask import Flask, render_template, request, redirect, url_for, abort
+from flask_apscheduler import APScheduler
 from scripts.routine_type import *
 
 app     = Flask(__name__)
 data    = {}
 
+@app.route("/routine")
+
+@app.route("/user_id=<index>/ready")
+def ready_screen(index):
+    data["timeout"]     = 4
+    return render_template("ready_screen.html", index=index, timeout=data["timeout"])
+    
 @app.route("/user_id=<index>/option=<mode>")
 def user_routine(index, mode):
     rout_type       = get_routine_type(mode)
@@ -34,4 +42,5 @@ def main_page():
     return render_template("home_page.html", is_homepage=True)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # data["scheduler"].init_app(app)
+    app.run(debug=True, use_reloader=False)

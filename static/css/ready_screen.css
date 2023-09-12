@@ -1,0 +1,23 @@
+body {
+    background-image: url("/static/fitquest_bg_ready.png");
+    background-size: 100%;
+}
+#ready_text {
+    font-size: 225%;
+    font-family: "Serif", "Times New Roman", "Arial";
+    color: white;
+    width: fit-content;
+    height: fit-content;
+
+    margin-left: 45%;
+    margin-top: 25%;
+}
+#countdown_text {
+    font-size: 325%;
+    font-family: "Serif", "Times New Roman", "Arial";
+    color: white;
+    width: fit-content;
+    height: fit-content;
+
+    margin-left: 49%;
+}
