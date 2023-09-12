@@ -4,5 +4,6 @@ assets
 *.bat
 *.xcf
 __pycache__
-.gitignore
 venv/Lib/site-packages/werkzeug/debug/shared/*.png
+venv/*
+env/*
