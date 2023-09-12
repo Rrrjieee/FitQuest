@@ -7,7 +7,7 @@ from scripts.routine_type import *
 app     = Flask(__name__)
 data    = {}
 
-@app.route("/routine")
+# @app.route("/routine")
 
 @app.route("/user_id=<index>/ready")
 def ready_screen(index):
