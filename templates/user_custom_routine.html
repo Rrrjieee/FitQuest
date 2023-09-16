@@ -3,9 +3,11 @@
     FitQuest: Select your routine
 {% endblock %}
 {% block header_data %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_custom_routine.css') }}">
+    <link rel="stylesheet" href="{{ url_for('css_user_custom_routine') }}">
 {% endblock %}
 {% block content %}
+    <span id="flask_data" hidden="hidden"
+          data-id="{{ id }}"></span>
     <div id="page_flavor_div">
         <p>CUSTOMIZED ROUTINE</p>
     </div>
@@ -14,14 +16,47 @@
             <p>Exercises</p>
         </div>
         <div class="field_space" id="exercise">
-            <button type="button" class="option" id="btn-1">
+            {% for i in range(1, 5) %}
+            <button type="button" class="option" id="btn-{{i}}">
             </button>
-            <button type="button" class="option" id="btn-2">
-            </button>
-            <button type="button" class="option" id="btn-3">
-            </button>
-            <button type="button" class="option" id="btn-4">
-            </button>
+            {% endfor %}
         </div>
     </div>
+    <div class="field_container" id="count">
+        <div class="field_cabaret">
+            <p>Count</p>
+        </div>
+        <div class="field_space" id="count">
+            {% for i in range(1, 13) %}
+            <button type="button" class="option" id="btn-{{i}}">
+                {{ i }}
+            </button>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="field_container" id="reps">
+        <div class="field_cabaret">
+            <p>Repetitions</p>
+        </div>
+        <div class="field_space" id="reps">
+            {% for i in range(1, 5) %}
+            <button type="button" class="option" id="btn-{{i}}">
+                {{ i }}
+            </button>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="field_container" id="preview">
+        <div class="field_cabaret">
+            <p>My Routine</p>
+        </div>
+        <div class="field_space" id="preview">
+            {% for i in range(1, 4) %}
+            <div class="option" id="btn-{{i}}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <a class="btn btn-light" id="go_back" href="/user_id={{id}}">GO BACK!</a>
+    <a class="btn btn-light" id="routine_start" href="/user_id={{id}}/ready">START</a>
 {% endblock %}
