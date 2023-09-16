@@ -22,6 +22,9 @@ def user_routine(index, mode):
         abort(404)
 
     match (rout_type):
+        case RoutineType.custom:
+            return render_template("user_custom_routine.html", id=index)
+        
         case RoutineType.premade:
             return render_template("user_premade_routine.html", id=index)
         
@@ -42,5 +45,6 @@ def main_page():
     return render_template("home_page.html", is_homepage=True)
 
 if __name__ == "__main__":
-    # data["scheduler"].init_app(app)
+    import fitquest_load_exercises
+    exer_list   = fitquest_load_exercises.load_exercises()
     app.run(debug=True, use_reloader=False)
