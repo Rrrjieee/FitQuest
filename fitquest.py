@@ -17,7 +17,7 @@ def css_user_custom_routine():
 #   =================   HTML Section    =====================
 @app.route("/user_id=<index>/ready")
 def ready_screen(index):
-    data["timeout"]     = 4
+    data["timeout"]     = 3
     return render_template("ready_screen.html", index=index, timeout=data["timeout"])
     
 @app.route("/user_id=<index>/option=<mode>")
