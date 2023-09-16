@@ -1,0 +1,67 @@
+#page_flavor_div {
+    background-color: #ffffff;
+    border-radius: 5%;
+    margin-left: 78vw;
+    margin-top: 6vh;
+    width: 20vw;
+    position: absolute;
+    height: 22vh;
+    max-height: 92px;
+}
+
+#page_flavor_div p {
+    font-size: 2.4vw;
+    font-family: "Serif", "Times New Roman", "Arial";
+    color: #310064;
+    text-align: center;
+}
+
+.field_container {
+    width: 18vw;
+    height: 54vh;
+    background-color: #e0e0e0;
+    
+    position: absolute;
+    top: 176px;
+}
+
+.field_container#exercise {
+    left: 6vw;
+}
+
+.field_cabaret {
+    height: 8vh;
+    width: 100%;
+    background-color: #7a479c;
+
+    position: relative;
+}
+
+.field_cabaret p {
+    font-size: 28px;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    font-family: "Serif", "Times New Roman", "Arial";
+
+    text-align: center;
+    top: 8%;
+    position: relative;
+}
+
+.field_space {
+    height: 46vh;
+    width: 100%;
+
+    position: relative;
+}
+
+.field_space#exercise .option {
+    height: 7vw;
+    width: 7vw;
+    margin-left: 1vw;
+    margin-top: 2vh;
+    margin-right: 1vw;
+
+    position: absolute;
+}

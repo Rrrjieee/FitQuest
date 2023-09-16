@@ -11,24 +11,6 @@
     margin-top: 2%;
     width: 30%;
 }
-#interactible_container {
-    margin-top: -20%;
-    margin-left: 20%;
-    margin-right: 20%;
-    /* width: max-content; */
-}
-    .routine_widget {
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-top: 5%;
-        
-        position: absolute;
-        width: 55%;
-        height: 75%;
-
-        background-image: url("/static/routine_widget.png");
-        background-size: cover;
-    }
 
 #routine_start {
     position: sticky;
@@ -46,3 +28,53 @@
     margin-top: 14%;
     transform: rotate(-90deg);
 }
+
+.routine_container {
+    color: #ffffff;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: -17%;
+}
+.routine_option {
+    position: absolute;
+    width: 70vw;
+    height: 20vw;
+}
+.routine_option [class="btn btn-light"] {
+    width: 100%;
+    height: 90%;
+
+    background-image: url("/static/routine_widget.png");
+    background-size: 100% 100%;
+}
+.routine_option .routine_text {
+    font-size: 3vw;
+    font-family: "Serif", "Times New Roman", "Arial";
+    color: white;
+
+    width: fit-content;
+    height: fit-content;
+
+    position: absolute;
+    top: 6.4vw;
+    left: -3.6vw;
+    transform: rotate(-90deg);
+}
+/* #interactible_container {
+    margin-top: -20%;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: max-content;
+}
+    .routine_widget {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 5%;
+        
+        position: absolute;
+        width: 55%;
+        height: 75%;
+
+        background-image: url("/static/routine_widget.png");
+        background-size: cover;
+    } */

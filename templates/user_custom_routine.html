@@ -1,0 +1,27 @@
+{% extends "fitquest_template.html" %}
+{% block title %}
+    FitQuest: Select your routine
+{% endblock %}
+{% block header_data %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_custom_routine.css') }}">
+{% endblock %}
+{% block content %}
+    <div id="page_flavor_div">
+        <p>CUSTOMIZED ROUTINE</p>
+    </div>
+    <div class="field_container" id="exercise">
+        <div class="field_cabaret">
+            <p>Exercises</p>
+        </div>
+        <div class="field_space" id="exercise">
+            <button type="button" class="option" id="btn-1">
+            </button>
+            <button type="button" class="option" id="btn-2">
+            </button>
+            <button type="button" class="option" id="btn-3">
+            </button>
+            <button type="button" class="option" id="btn-4">
+            </button>
+        </div>
+    </div>
+{% endblock %}
