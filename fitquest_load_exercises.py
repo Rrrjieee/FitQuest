@@ -12,15 +12,18 @@ def load_exercises():
             continue
 
         file_name   = os.path.basename(file_path).split(".")
-        file_ext    = file_name[1]
-        file_name   = file_name[0]
+        file_ext    = file_name[-1]
+        file_name   = file_name[-2]
         if ((file_ext != "png") or (file_name[:9] != "exercise_")):
             continue
 
+        sub_file_path   = "/".join(file_path.split("\\")[1:])
         exer_list.append(
             add_exercise(file_name[10:],
                          20,
-                         file_path)
+                         sub_file_path)
         )
 
     return exer_list
+
+load_exercises()

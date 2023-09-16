@@ -1,14 +1,20 @@
 import os
+import fitquest_load_css as fq_css
 
 from flask import Flask, render_template, request, redirect, url_for, abort
-from flask_apscheduler import APScheduler
+# from flask_apscheduler import APScheduler
 from scripts.routine_type import *
 
-app     = Flask(__name__)
-data    = {}
+app                         = Flask(__name__)
+app.config['STATIC_FOLDER'] = 'static'
+data                        = {}
 
-# @app.route("/routine")
+#   =================   CSS  Section    =====================
+@app.route('/css/user_custom_routine.css')
+def css_user_custom_routine():
+    return fq_css.user_custom_routine(app, exer_list)
 
+#   =================   HTML Section    =====================
 @app.route("/user_id=<index>/ready")
 def ready_screen(index):
     data["timeout"]     = 4
@@ -45,6 +51,6 @@ def main_page():
     return render_template("home_page.html", is_homepage=True)
 
 if __name__ == "__main__":
-    import fitquest_load_exercises
-    exer_list   = fitquest_load_exercises.load_exercises()
+    import fitquest_load_exercises as fq_load_exer
+    exer_list   = fq_load_exer.load_exercises()
     app.run(debug=True, use_reloader=False)
