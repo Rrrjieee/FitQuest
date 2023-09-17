@@ -1,0 +1,140 @@
+#page_logo {
+    width: calc(var(--page_logo_width) * 0.20);
+    height: calc(var(--page_logo_height) * 0.20);
+    left: 42.5vw;
+    top: 1.5vw;
+}
+#count_container {
+    background-color: #4a208a;
+
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 10px;
+
+    width: 20vw;
+    height: 44vh;
+
+    left: 6vw;
+    top: 32vh;
+    position: absolute;
+}
+#count_container #count_text {
+    --size: 280%;
+    --num: 2.80;
+
+    font-size: var(--size);
+    font-family: "Serif", "Times New Roman", "Arial";
+    color: white;
+
+    left: calc(48% - 8% * var(--num));
+    top: 6%;
+    position: relative;
+}
+#count_container #count_value {
+    --size: 575%;
+    --num: 5.75;
+
+    font-size: var(--size);
+    font-family: "Serif", "Times New Roman", "Arial";
+    color: white;
+
+    position: relative;
+    top: 10%;
+    left: calc(56% - 2.7% * var(--num));
+}
+#exercise_backdrop {
+    background-color: #808080;
+
+    width: 32vw;
+    height: 60vh;
+
+    position: absolute;
+    top: 24vh;
+    left: 31.5vw;
+}
+#info_container {
+    background-color: #4a208a;
+    
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 5px;
+
+    width: 27.2vw;
+    height: 28vh;
+
+    position: absolute;
+    top: 24vh;
+    left: 69.4vw;
+}
+#info_container #info_label_container {
+    position: relative;
+
+    height: 100%;
+    width: 44%;
+
+    /* background-color: #ffffff; */
+}
+#info_container #info_value_container {
+    position: relative;
+    left: 44%;
+    top: -100%;
+
+    height: 100%;
+    width: 56%;
+
+    /* background-color: #ffffff; */
+}
+
+#info_container #info_label_container #exer_label,
+#info_container #info_value_container #exer_value {
+    height: 50%;
+    width: 100%;
+
+    position: relative;
+    text-align: right;
+    padding-top: 5%;
+    padding-right: 2%;
+
+    font-family: "Serif", "Times New Roman", "Arial";
+    font-size: 125%;
+    color: white;
+}
+#info_container #info_label_container #rep_label,
+#info_container #info_value_container #rep_value {
+    height: 50%;
+    width: 100%;
+
+    position: relative;
+    text-align: right;
+    padding-top: 5%;
+    padding-right: 2%;
+
+    font-family: "Serif", "Times New Roman", "Arial";
+    font-size: 125%;
+    color: white;
+}
+#exer_value {
+    font-size: 160%;
+}
+#exer_value, #rep_value {
+    text-align: center;
+}
+#video_container {
+    position: absolute;
+    top: 56vh;
+    right: 3.6vw;
+
+    width: 16vw;
+    height: 16vw;
+
+    border-color: #000000;
+    border-radius: 2px;
+    border-style: outset;
+}
+#video_container #webcam-element {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

@@ -1,1 +1,58 @@
 {% extends "fitquest_template.html" %}
+{% block title %}
+    FitQuest: Exorcise
+{% endblock %}
+{% block header_data %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/exercise_page.css') }}">
+{% endblock %}
+{% block content %}
+    <div id="count_container">
+        <div id="count_text">Count:</div>
+        <!-- This element should be dynamic. -->
+        <div id="count_value">0</div>
+    </div>
+    <div id="exercise_backdrop">        
+    </div>
+    <div id="info_container">
+        <div id="info_label_container">
+            <div id="exer_label">Current Exercise:</div>
+            <div id="rep_label">Repetition #:</div>
+        </div>
+        <div id="info_value_container">
+            <div id="exer_value"></div>
+            <div id="rep_value"></div>
+        </div>
+    </div>
+    <div id="video_container">
+        <video id="webcam-element" autoplay></video>
+    </div>
+    <!-- Dialog prompt -->
+    <div class="modal fade" id="camera_declined_prompt" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Camera Access Refused</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+                FitQuest requires access to your camera in order to
+                detect proper execution of exercises. FitQuest does
+                not collect data from your camera to sell it to
+                third-parties (we're too poor for that).
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <a class="btn btn-primary" href="/user_id={{index}}">Return to Routine Selection!</a>
+            </div>
+            
+            </div>
+        </div>
+    </div>      
+    <!-- Thanks to ChatGPT for this feature. -->
+    <script type="text/javascript" src="/static/javascript/exercise_page.js"></script>
+{% endblock %}

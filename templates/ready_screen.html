@@ -6,22 +6,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ready_screen.css') }}">
 {% endblock %}
 {% block content %}
+<span id="page_data" hidden="hidden" data-id={{index}}></span>
 <div id="ready_text">
     Ready in
 </div>
 <div id="countdown_text">{{timeout}}</div>
-<script>
-    const timer = setInterval(() => {
-        let elem        = document.getElementById("countdown_text");
-        var text_num    = parseInt(elem.innerHTML);
-
-        text_num       -= 1;
-        elem.innerHTML  = text_num.toString();
-        document.title  = "FitQuest: Ready in " + elem.innerHTML;
-        if (text_num > 0) {
-            return;
-        }
-        clearInterval(timer);
-    }, 1000)
-</script>
+<script type="text/javascript" src="/static/javascript/ready_screen.js"></script>
 {% endblock %}

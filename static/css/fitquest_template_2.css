@@ -1,0 +1,18 @@
+:root {
+    --page_logo_width: 1000px;
+    --page_logo_height: 583px;
+}
+div#container {
+    background-color: #310064;
+    background-size: 100% 100%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#page_logo {
+    background-image: url("/static/fitquest_logo.png");
+    background-size: 100%;
+    width: calc(var(--page_logo_width) * 0.25);
+    height: calc(var(--page_logo_height) * 0.25);
+    position: absolute;
+}

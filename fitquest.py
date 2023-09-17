@@ -2,7 +2,6 @@ import os
 import fitquest_load_css as fq_css
 
 from flask import Flask, render_template, request, redirect, url_for, abort
-# from flask_apscheduler import APScheduler
 from scripts.routine_type import *
 
 app                         = Flask(__name__)
@@ -15,6 +14,11 @@ def css_user_custom_routine():
     return fq_css.user_custom_routine(app, exer_list)
 
 #   =================   HTML Section    =====================
+@app.route("/user_id=<index>/exercise")
+def exercise_screen(index):
+    print("Exercise screen requested.")
+    return render_template("exercise_page.html", index=index, template=2)
+
 @app.route("/user_id=<index>/ready")
 def ready_screen(index):
     data["timeout"]     = 3

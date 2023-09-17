@@ -9,6 +9,8 @@
     <title> {% block title %} FitQuest {% endblock %} </title>
     {% if is_homepage %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/home_page.css') }}">
+    {% elif template == 2 %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/fitquest_template_2.css') }}">
     {% else %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/fitquest_template.css') }}">
     {% endif %}
@@ -29,6 +31,9 @@
 </head>
 <body>
     <div id="container">
+    {% if template == 2 %}
+        <div id="page_logo"></div>
+    {% endif %}
     {% block content %}
     {% endblock %}
     </div>
