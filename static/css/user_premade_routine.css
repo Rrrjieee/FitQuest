@@ -31,50 +31,132 @@
 
 .routine_container {
     color: #ffffff;
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-top: -17%;
+    margin-left: 29vw;
+    margin-right: 15vw;
+    margin-bottom: 2vh;
+    top: -30vh;
+
+    position: relative;
+    width: 56vw;
+    height: 32vh;
+
+    cursor: pointer;
 }
 .routine_option {
-    position: absolute;
-    width: 70vw;
-    height: 20vw;
-}
-.routine_option [class="btn btn-light"] {
+    position: relative;
     width: 100%;
-    height: 90%;
-
-    background-image: url("/static/routine_widget.png");
-    background-size: 100% 100%;
-}
-.routine_option .routine_text {
-    font-size: 3vw;
-    font-family: "Serif", "Times New Roman", "Arial";
-    color: white;
-
-    width: fit-content;
-    height: fit-content;
-
-    position: absolute;
-    top: 6.4vw;
-    left: -3.6vw;
-    transform: rotate(-90deg);
-}
-/* #interactible_container {
-    margin-top: -20%;
-    margin-left: 20%;
-    margin-right: 20%;
-    width: max-content;
-}
-    .routine_widget {
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-top: 5%;
-        
-        position: absolute;
-        width: 55%;
-        height: 75%;
-
+    height: 100%;
+    :active {
+        border-radius: 20px;
+        border-style: inset;
+        border-color: gray;
+    }
+    [class="btn btn-light"] {
+        width: 100%;
+        height: 100%;
+    
         background-image: url("/static/routine_widget.png");
-        background-size: cover;
-    } */
+        background-size: 100% 100%;
+    }
+    .routine_text {
+        font-size: 6.4vh;
+        font-family: "Serif", "Times New Roman", "Arial";
+        color: white;
+    
+        width: fit-content;
+        height: fit-content;
+    
+        position: absolute;
+        top: 34%;
+        left: -9.6%;
+        transform: rotate(-90deg);
+    }
+}
+.routine_container {
+    --right-elem-width: 93.6%;
+    --right-elem-mg_left: 6.2%;
+
+    .routine_desc_container {
+        width: 93.6%;
+        height: 33.6%;
+
+        position: relative;
+        margin-top: -9.85%;
+        margin-left: var(--right-elem-mg_left);
+        padding: 1.2%;
+
+        display: inline-block;
+        .routine_label, .routine_text {
+            font-size: 75%;
+            font-family: "Serif", "Times New Roman", "Arial";    
+            color: black;
+
+            position: relative;
+            text-align: center;
+/* 
+            border: black;
+            border-style: 2px solid;
+            border-radius: 5px;
+            background-color: peachpuff;
+         */
+        }
+        .routine_label {
+            width: 10%;
+            top: -65%;
+        }
+        .routine_text {
+            width: 85%;
+            top: -100%;
+            left: 10.2%;
+        }
+    };
+    .routine_img_cabaret {
+        position: relative;
+        width: var(--right-elem-width);
+        height: 66.4%;
+    
+        margin-left: var(--right-elem-mg_left);
+        margin-top: -37.6%;
+    };
+    .routine_img_cabaret {
+        .routine_img_container {
+            --text-size: 70%;
+            position: relative;
+
+            margin-left: 11%;
+            margin-right: 9%;
+            margin-top: 3.5%;
+
+            width: 12%;
+            height: 76%;
+
+            display: inline-block;
+
+            border: #606060;
+            border-style: groove;
+            border-radius: 0.5px;
+
+            .routine_img {
+                --rel-width: 70%;
+                --rel-height: 50%;
+
+                position: relative;
+
+                width: var(--rel-width);
+                height: 52%;
+
+                /* background-color: yellowgreen; */
+                background-size: 100% 100%;
+                margin-left: calc(calc(100% - var(--rel-width)) * 0.5);
+                margin-top: calc(calc(100% - var(--rel-height)) * 0.15625);
+            }
+            .routine_reps, .routine_sets {
+                font-size: var(--text-size);
+                width: 100%;
+                color: black;
+                text-align: center;
+                position: relative;
+            }
+        }
+    }
+}

@@ -1,8 +1,10 @@
-import os
+# import os
+import json
 import fitquest_load_css as fq_css
 
 from flask import Flask, render_template, request, redirect, url_for, abort
 from scripts.routine_type import *
+from scripts.exercise import BaseExercise, get_exercise
 
 app                         = Flask(__name__)
 app.config['STATIC_FOLDER'] = 'static'
@@ -36,7 +38,25 @@ def user_routine(index, mode):
             return render_template("user_custom_routine.html", id=index)
         
         case RoutineType.premade:
-            return render_template("user_premade_routine.html", id=index)
+            routines    = [[], []]
+            
+            routines[0].append(vars(get_exercise("sit_ups")))
+            routines[0].append(vars(get_exercise("lunges")))
+            routines[0].append(vars(get_exercise("push_ups")))
+
+            routines[1].append(vars(get_exercise("lunges")))
+            routines[1].append(vars(get_exercise("jumping_jacks")))
+            routines[1].append(vars(get_exercise("push_ups")))
+            routines        = json.dumps(routines, indent = 4)
+
+            desc_file       = open("premade_desc.json", 'r')
+            routine_desc    = json.dumps(json.load(desc_file), indent=4)
+            desc_file.close()
+
+            return render_template("user_premade_routine.html",
+                                   id=index,
+                                   routine_data=routines,
+                                   routine_desc=routine_desc)
         
     return "Sorry, no webpage yet."
 
@@ -55,6 +75,6 @@ def main_page():
     return render_template("home_page.html", is_homepage=True)
 
 if __name__ == "__main__":
-    import fitquest_load_exercises as fq_load_exer
-    exer_list   = fq_load_exer.load_exercises()
-    app.run(debug=True, use_reloader=False)
+    import fitquest_load_exercises
+    exer_list   = fitquest_load_exercises.load_exercises()
+    app.run(debug=True)

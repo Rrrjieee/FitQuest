@@ -5,6 +5,7 @@ const videoElement = document.getElementById('webcam-element');
 if ((!navigator.mediaDevices) || (!navigator.mediaDevices.getUserMedia)) {
     console.error('Unfortunately, WebRTC is not supported by this browser.');
 }
+
 // Access the user's camera
 navigator.mediaDevices
     .getUserMedia({ video: true })

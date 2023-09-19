@@ -1,0 +1,22 @@
+{
+    "jumping_jacks": {
+        "reps": 20,
+        "sets": 2,
+        "img_path": "/static/exercises/exercise_jumping_jacks.png"
+    },
+    "lunges": {
+        "reps": 30,
+        "sets": 2,
+        "img_path": "/static/exercises/exercise_lunges.png"
+    },
+    "sit_ups": {
+        "reps": 20,
+        "sets": 2,
+        "img_path": "/static/exercises/exercise_sit_ups.png"
+    },
+    "push_ups": {
+        "reps": 20,
+        "sets": 1,
+        "img_path": "/static/exercises/exercise_push_ups.png"
+    }
+}
