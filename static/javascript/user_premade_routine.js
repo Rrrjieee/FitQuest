@@ -1,25 +1,46 @@
 {
-    var selectedElem    = null;
     var selectedIndex   = 0;
     var userIndex       = 0;
+    var startButton     = document.getElementById('routine_start');
 
     function createButtonEventSubscriber(elemId, index) {
+        var button              = document.getElementById(elemId);
         var callback            = function() {
             var prevIndex       = selectedIndex;
-            selectedElem        = elemId;
             selectedIndex       = index;
             if (prevIndex == selectedIndex) {
-                selectedIndex   = 0;
-                selectedElem    = null;
+                button.blur();
+                selectedIndex       = 0;
+                startButton.href    = "";
+            } else {
+                startButton.href    = "/user_id=" + userIndex + "/ready"
             }
             console.log("Currently selected option:", selectedIndex);
         };
-        var button          = document.getElementById(elemId);
         button.addEventListener("click", callback);
     }
 
     createButtonEventSubscriber("routine_option_1", 1);
     createButtonEventSubscriber("routine_option_2", 2);
+    startButton.addEventListener("click", () => {
+        if (selectedIndex == 0) {
+            alert('Please select a routine.');
+            return;
+        }
+        var streamBody  = {
+            "method": "premade",
+            "index": selectedIndex - 1
+        }
+        fetch('/req_data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(streamBody),
+        })
+        window.location.href    = '/user_id=' + userIndex + '/ready';
+    })
+
     
     // ===================================================
     // ===================================================
@@ -61,5 +82,5 @@
             //  Update description.
             descElem.children[1].innerText  = descData[i-1];
         }
-    });   
+    });
 }

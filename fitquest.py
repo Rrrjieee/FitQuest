@@ -2,7 +2,7 @@
 import json
 import fitquest_load_css as fq_css
 
-from flask import Flask, render_template, request, redirect, url_for, abort
+from flask import Flask, render_template, request, redirect, url_for, abort, jsonify
 from scripts.routine_type import *
 from scripts.exercise import BaseExercise, get_exercise
 
@@ -15,11 +15,22 @@ data                        = {}
 def css_user_custom_routine():
     return fq_css.user_custom_routine(app, exer_list)
 
+#   =================  Request  Section =====================
+@app.route("/req_data", methods=["POST"])
+def request_req_data():
+    req_data        = request.get_json()
+    rout_type       = get_routine_type(req_data["method"])
+    match (rout_type):
+        case RoutineType.premade:
+            data['exer_list']   = data['routines'][req_data["index"]]
+            data['exer_list']   = json.dumps(data['exer_list'], indent=4)
+            return jsonify({"response": "200: OK!"})
+
 #   =================   HTML Section    =====================
 @app.route("/user_id=<index>/exercise")
 def exercise_screen(index):
     print("Exercise screen requested.")
-    return render_template("exercise_page.html", index=index, template=2)
+    return render_template("exercise_page.html", index=index, template=2, exer_list=data['exer_list'])
 
 @app.route("/user_id=<index>/ready")
 def ready_screen(index):
@@ -38,7 +49,7 @@ def user_routine(index, mode):
             return render_template("user_custom_routine.html", id=index)
         
         case RoutineType.premade:
-            routines    = [[], []]
+            routines        = [[], []]
             
             routines[0].append(vars(get_exercise("sit_ups")))
             routines[0].append(vars(get_exercise("lunges")))
@@ -47,10 +58,12 @@ def user_routine(index, mode):
             routines[1].append(vars(get_exercise("lunges")))
             routines[1].append(vars(get_exercise("jumping_jacks")))
             routines[1].append(vars(get_exercise("push_ups")))
-            routines        = json.dumps(routines, indent = 4)
 
-            desc_file       = open("premade_desc.json", 'r')
-            routine_desc    = json.dumps(json.load(desc_file), indent=4)
+            data['routines']    = routines
+            routines            = json.dumps(routines, indent = 4)
+
+            desc_file           = open("premade_desc.json", 'r')
+            routine_desc        = json.dumps(json.load(desc_file), indent=4)
             desc_file.close()
 
             return render_template("user_premade_routine.html",

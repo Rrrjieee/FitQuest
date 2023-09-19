@@ -16,26 +16,26 @@
     <!-- <a class="btn btn-light" id="routine_start" href="/user_id={{id}}/ready">START</a> -->
     <button class="btn btn-light" id="routine_start">START</button>
 
-    {% for i in range(1, 3) %}
-    <div class="routine_container" id="option-{{i}}">
-        <div class="routine_option">
+    <div class="routine_container">
+        {% for i in range(1, 3) %}
+        <div class="routine_option" id="option-{{i}}">
             <button type="button" class="btn btn-light" id="routine_option_{{i}}"></button>
             <p class="routine_text">Routine {{i}}</p>
-        </div>
-        <div class="routine_desc_container">
-            <div class="routine_label">Description:</div>
-            <div class="routine_text"></div>
-        </div>
-        <div class="routine_img_cabaret">
-            {% for j in range(1, 4) %}
-            <div class="routine_img_container" id="-{{j}}">
-                <div class="routine_img"></div>
-                <div class="routine_reps"></div>
-                <div class="routine_sets"></div>
+            <div class="routine_img_cabaret">
+                {% for j in range(1, 4) %}
+                <div class="routine_img_container" id="-{{j}}">
+                    <div class="routine_img"></div>
+                    <div class="routine_reps"></div>
+                    <div class="routine_sets"></div>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
+            <div class="routine_desc_container">
+                <div class="routine_label">Description:</div>
+                <div class="routine_content">Content</div>
+            </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
     <script type="text/javascript" src="/static/javascript/user_premade_routine.js"></script>
 {% endblock %}
